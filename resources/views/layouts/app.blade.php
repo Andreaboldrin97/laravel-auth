@@ -26,8 +26,23 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'boolpress') }}
+                    BOOLPRESS
                 </a>
+
+                @guest()
+                @else
+                    <div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('post.index') }}">POSTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">SHOW POST</a>
+                            </li>
+                        </ul>
+                    </div>
+                @endguest
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
