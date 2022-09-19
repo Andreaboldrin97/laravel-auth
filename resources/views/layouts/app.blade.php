@@ -36,9 +36,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('post.index') }}">POSTS</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">SHOW POST</a>
-                            </li>
                         </ul>
                     </div>
                 @endguest

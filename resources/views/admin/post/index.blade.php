@@ -18,7 +18,11 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->author }}</td>
-                        <td>{{ $post->title }}</td>
+                        <td>
+                            <a href="{{ route('post.show', $post->id) }}">
+                                {{ $post->title }}
+                            </a>
+                        </td>
                         <td>{{ $post->description }}</td>
                         <td>
                             <a class="btn btn-success" href="#">
