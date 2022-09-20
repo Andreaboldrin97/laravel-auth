@@ -3,6 +3,11 @@
 
 @section('content')
     <div class="mt-3 container">
+        @if (session('create'))
+            <div class="alert alert-success">
+                {{ session('create') }} : questo elemento è stato creato corettamente
+            </div>
+        @endif
         INDEX POSTS
         <table class="table table-dark table-striped">
             <thead>

@@ -37,6 +37,7 @@
             <input type="text" name="image_url" class="form-control" id="image_url" required
                 value="{{ old('image_url', $post->image_url) }}">
         </div>
+
         <button type="submit" class="btn btn-success">Submit</button>
     </form>
 @endsection
