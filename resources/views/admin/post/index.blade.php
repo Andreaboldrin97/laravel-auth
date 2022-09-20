@@ -8,6 +8,11 @@
                 {{ session('create') }} : questo elemento è stato creato corettamente
             </div>
         @endif
+        @if (session('delete'))
+            <div class="alert alert-danger">
+                {{ session('delete') }} : questo elemento è stato eliminato corettamente
+            </div>
+        @endif
         INDEX POSTS
         <table class="table table-dark table-striped">
             <thead>
@@ -30,12 +35,12 @@
                         </td>
                         <td>{{ $post->description }}</td>
                         <td>
-                            <a class="btn btn-success" href="#">
+                            <a class="btn btn-success" href="{{ route('admin.post.edit', $post->id) }}">
                                 Edit
                             </a>
                         </td>
                         <td>
-                            <form action="#" class="delete-method" method="POST">
+                            <form action="{{ route('admin.post.destroy', $post->id) }}" class="delete-method" method="POST">
                                 @csrf
                                 @method('DELETE')
 
