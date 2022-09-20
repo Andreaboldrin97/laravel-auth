@@ -19,7 +19,7 @@
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->author }}</td>
                         <td>
-                            <a href="{{ route('post.show', $post->id) }}">
+                            <a href="{{ route('admin.post.show', $post->id) }}">
                                 {{ $post->title }}
                             </a>
                         </td>

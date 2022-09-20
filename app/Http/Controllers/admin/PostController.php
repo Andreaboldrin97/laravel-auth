@@ -27,7 +27,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $post = new Post();
+        $route = "route('admin.post.store')";
+        $method = 'POST';
+        return view('admin.post.create&edit', compact(['post', 'route', 'method']));
     }
 
     /**
