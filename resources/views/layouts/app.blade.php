@@ -34,7 +34,7 @@
                     <div>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('post.index') }}">POSTS</a>
+                                <a class="nav-link" href="{{ route('admin.post.index') }}">POSTS</a>
                             </li>
                         </ul>
                     </div>
