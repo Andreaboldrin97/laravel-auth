@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
 
+    protected $validationRoule = [
+        'title' => 'required|min:3',
+        'description' => 'required|min:5',
+        'image_url' => 'required'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -43,6 +48,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $validationData = $request->validate($this->validationRoule);
         $data = $request->all();
 
         $newPost = new Post();
@@ -87,6 +93,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validationData = $request->validate($this->validationRoule);
         $post = Post::findOrFail($id);
         $data['author'] = $post->author;
         $data['sale_date'] = $post->sale_date;
